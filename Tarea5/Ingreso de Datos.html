@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Definición de metadatos -->
+  <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Escalado inicial para dispositivos móviles -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- Configuración de compatibilidad con IE -->
+  <link rel="stylesheet" href="estilos.css"> <!-- Vinculación de la hoja de estilos -->
+  <title>Formulario Registro</title> <!-- Título de la página -->
+</head>
+<body>
+  <!-- Sección del formulario de registro -->
+  <section class="form-register">
+    <h4><b>Ingreso de Datos de cliente</b></h4> <!-- Título del formulario -->
+    <!-- Campos del formulario -->
+    <p><b>Nombre:</b></p>
+    <input class="controls" type="text" name="nombres" id="nombres"> <!-- Campo para ingresar el nombre -->
+    <p><b>Apellido:</b></p>
+    <input class="controls" type="text" name="apellidos" id="apellidos"> <!-- Campo para ingresar el apellido -->
+    <p><b>Fecha de Nacimiento:</b></p>
+    <input class="controls" type="date" name="fecha_nacimiento" id="fecha_nacimiento"> <!-- Campo para ingresar la fecha de nacimiento -->
+    <p><b>Correo:</b></p>
+    <input class="controls" type="email" name="correo" id="correo"> <!-- Campo para ingresar el correo -->
+    <p><b>Teléfono:</b></p>
+    <input class="controls" type="tel" name="telefono" id="telefono"> <!-- Campo para ingresar el teléfono -->
+    <input class="botons" type="submit" id="submitBtn" value="Ingresar"> <!-- Botón para enviar el formulario -->
+  </section>
+
+  <!-- Script para validar el formulario -->
+  <script>
+    function alerta() {
+      // Obtener los valores de los campos del formulario
+      var nombre = document.getElementById("nombres").value;
+      var apellido = document.getElementById("apellidos").value;
+      var fechaNacimiento = document.getElementById("fecha_nacimiento").value;
+      var correo = document.getElementById("correo").value;
+      var telefono = document.getElementById("telefono").value;
+
+      // Validar si todos los campos están completos
+      if (nombre && apellido && fechaNacimiento && correo && telefono) {
+        alert("Formulario enviado correctamente"); // Mostrar mensaje si todos los campos están completos
+      } else {
+        alert("Por favor complete todos los campos del formulario"); // Mostrar mensaje si algún campo está incompleto
+      }
+    }
+
+    // Asignar la función de alerta al evento click del botón "Ingresar"
+    document.getElementById("submitBtn").addEventListener("click", alerta);
+  </script>
+</body>
+</html>
